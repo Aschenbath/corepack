@@ -11,6 +11,11 @@ The `dist/` directory now contains the corepack build and the shims.
 Call `node ./dist/corepack --help` and behold.
 You can also run the tests with `yarn test`.
 
+The build runs `mkshims.mts` using Node.js's native TypeScript support. The
+`.mts` extension and `sources/package.json` declare the generator and its
+source imports as ES modules, avoiding module type detection warnings.
+The generated entry points and bundle use CommonJS.
+
 ## Contributing on Windows
 
 If you are cloning the repo to a directory on a Microsoft Windows operating system, it is recommended to use the same drive as your Windows `HOMEDRIVE` to avoid build and other issues related to a current restriction with Yarn Plug'n'Play caching.
